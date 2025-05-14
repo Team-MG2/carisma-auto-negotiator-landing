@@ -1,12 +1,26 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { PricingModal } from "@/components/PricingModal";
+import { Hero } from "@/components/Hero";
+import { ProblemSection } from "@/components/ProblemSection";
+import { SolutionSection } from "@/components/SolutionSection";
+import { FeaturesSection } from "@/components/FeaturesSection";
+import { Footer } from "@/components/Footer";
 
 const Index = () => {
+  const [pricingModalOpen, setPricingModalOpen] = useState(false);
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-white">
+      <Hero onPricingClick={() => setPricingModalOpen(true)} />
+      <ProblemSection />
+      <SolutionSection />
+      <FeaturesSection onPricingClick={() => setPricingModalOpen(true)} />
+      <Footer />
+      <PricingModal open={pricingModalOpen} onOpenChange={setPricingModalOpen} />
     </div>
   );
 };

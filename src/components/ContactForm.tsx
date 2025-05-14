@@ -5,6 +5,12 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/components/ui/use-toast";
 import { Mail } from "lucide-react";
+import { createClient } from "@supabase/supabase-js";
+
+// Initialize Supabase client
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+const supabase = createClient(supabaseUrl, supabaseKey);
 
 export const ContactForm = () => {
   const [name, setName] = useState("");
@@ -18,9 +24,12 @@ export const ContactForm = () => {
     setIsSubmitting(true);
     
     try {
-      // Simulating form submission - in a real application, you'd send this to a server
-      // that would forward it to scalzottomichele@gmail.com
-      console.log("Form submitted:", { name, email, message });
+      // Save form data to Supabase
+      const { error } = await supabase
+        .from('carisma_contattaci')
+        .insert([{ nome: name, email, messaggio: message }]);
+      
+      if (error) throw error;
       
       // Show success message
       toast({
@@ -33,6 +42,7 @@ export const ContactForm = () => {
       setEmail("");
       setMessage("");
     } catch (error) {
+      console.error("Error sending message:", error);
       toast({
         title: "Errore",
         description: "Non è stato possibile inviare il messaggio. Riprova più tardi.",

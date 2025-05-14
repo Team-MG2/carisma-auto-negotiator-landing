@@ -5,31 +5,52 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Mail } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
+import { createClient } from "@supabase/supabase-js";
 
 interface PricingModalProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
 }
 
+// Initialize Supabase client
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+const supabase = createClient(supabaseUrl, supabaseKey);
+
 export const PricingModal = ({ open, onOpenChange }: PricingModalProps) => {
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate API call
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      // Save email to Supabase
+      const { error } = await supabase
+        .from('carisma_emails')
+        .insert([{ email }]);
+      
+      if (error) throw error;
+      
       toast({
         title: "Grazie per il tuo interesse!",
         description: "Ti invieremo un'email quando i nostri piani saranno disponibili.",
       });
+      
       setEmail("");
       onOpenChange(false);
-    }, 1000);
+    } catch (error) {
+      console.error("Error saving email:", error);
+      toast({
+        title: "Si è verificato un errore",
+        description: "Non è stato possibile salvare la tua email. Riprova più tardi.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (

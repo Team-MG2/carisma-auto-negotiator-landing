@@ -8,8 +8,16 @@ interface HeroProps {
 
 export const Hero = ({ onPricingClick }: HeroProps) => {
   return (
-    <div className="bg-gradient-to-br from-purple-600 to-purple-900 text-white">
-      <div className="container mx-auto px-4 py-24 md:py-32">
+    <div className="relative bg-gradient-to-br from-purple-900 to-purple-800 text-white overflow-hidden">
+      {/* Overlay with car negotiation background image */}
+      <div 
+        className="absolute inset-0 opacity-20 bg-cover bg-center"
+        style={{ 
+          backgroundImage: `url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1773&q=80')`,
+          backgroundBlendMode: 'overlay'
+        }}
+      ></div>
+      <div className="container mx-auto px-4 py-24 md:py-32 relative z-10">
         <div className="max-w-3xl mx-auto text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
             Carisma
@@ -18,7 +26,7 @@ export const Hero = ({ onPricingClick }: HeroProps) => {
             L'AI che ti aiuta a negoziare l'acquisto dell'auto
           </p>
           <p className="text-lg md:text-xl mb-12 opacity-90">
-            Ottieni il miglior prezzo per la tua prossima auto, senza stress e con la sicurezza di un esperto AI al tuo fianco
+            Riduci il prezzo della tua prossima auto di seconda mano in tranquillità, senza bisogno di esperienza
           </p>
           <Button 
             onClick={onPricingClick} 

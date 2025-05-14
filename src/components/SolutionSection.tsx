@@ -7,8 +7,8 @@ export const SolutionSection = () => {
           <h2 className="text-3xl font-bold mb-4 text-gray-900">La soluzione</h2>
           <div className="h-1 w-20 bg-purple-600 mx-auto mb-8"></div>
           <p className="text-xl text-gray-700">
-            Carisma è la tua assistente personale AI che ti affianca nell'acquisto dell'auto, 
-            fornendoti il supporto tecnico e la sicurezza necessari per ottenere il miglior prezzo possibile.
+            Carisma è il tuo consulente tecnico e negoziale AI che ti affianca sul campo nell'acquisto dell'auto 
+            così da ottenere il miglior prezzo possibile.
           </p>
         </div>
         
@@ -18,13 +18,11 @@ export const SolutionSection = () => {
               <div className="p-8 md:p-12">
                 <h3 className="text-2xl font-bold mb-4 text-purple-900">Come funziona</h3>
                 <p className="text-lg text-gray-700 mb-6">
-                  Carisma utilizza l'intelligenza artificiale avanzata per analizzare, valutare 
-                  e negoziare il prezzo dell'auto al posto tuo.
+                  Carisma è un'applicazione smartphone tramite la quale interagire con l'intelligenza artificiale. 
                 </p>
                 <p className="text-lg text-gray-700">
-                  La nostra tecnologia ti dà accesso alle competenze di un esperto del settore 
-                  automotive direttamente dal tuo smartphone, permettendoti di prendere decisioni 
-                  informate e di negoziare con confidenza.
+                  Una volta scelta la vettura che ti interessa, basta inserire il link al sito web con l'offerta 
+                  per avviare il processo che ti farà comprare quel veicolo ad un prezzo ribassato.
                 </p>
               </div>
             </div>
@@ -34,19 +32,19 @@ export const SolutionSection = () => {
                 <ul className="space-y-3">
                   <li className="flex items-center">
                     <div className="mr-3">✓</div>
+                    <span>Evita Truffe e Veicoli Problematici</span>
+                  </li>
+                  <li className="flex items-center">
+                    <div className="mr-3">✓</div>
                     <span>Risparmia fino al 15% sul prezzo di acquisto</span>
                   </li>
                   <li className="flex items-center">
                     <div className="mr-3">✓</div>
-                    <span>Evita truffe e veicoli problematici</span>
-                  </li>
-                  <li className="flex items-center">
-                    <div className="mr-3">✓</div>
-                    <span>Acquista con la sicurezza di un esperto al tuo fianco</span>
-                  </li>
-                  <li className="flex items-center">
-                    <div className="mr-3">✓</div>
                     <span>Elimina lo stress della negoziazione</span>
+                  </li>
+                  <li className="flex items-center">
+                    <div className="mr-3">✓</div>
+                    <span>Acquista come se avessi l'esperienza di un esperto</span>
                   </li>
                 </ul>
               </div>

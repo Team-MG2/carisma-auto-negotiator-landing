@@ -7,8 +7,7 @@ export const SolutionSection = () => {
           <h2 className="text-3xl font-bold mb-4 text-gray-900">La soluzione</h2>
           <div className="h-1 w-20 bg-purple-600 mx-auto mb-8"></div>
           <p className="text-xl text-gray-700">
-            Carisma è il tuo consulente tecnico e negoziale AI che ti affianca sul campo nell'acquisto dell'auto 
-            così da ottenere il miglior prezzo possibile.
+            Carisma è il consulente tecnico e negoziale AI che ti affianca nell'acquisto dell'auto così da ottenere le condizioni migliori.
           </p>
         </div>
         
@@ -18,11 +17,10 @@ export const SolutionSection = () => {
               <div className="p-8 md:p-12">
                 <h3 className="text-2xl font-bold mb-4 text-purple-900">Come funziona</h3>
                 <p className="text-lg text-gray-700 mb-6">
-                  Carisma è un'applicazione smartphone tramite la quale interagire con l'intelligenza artificiale. 
+                  Carisma è un'applicazione smartphone basata sull'intelligenza artificiale. 
                 </p>
                 <p className="text-lg text-gray-700">
-                  Una volta scelta la vettura che ti interessa, basta inserire il link al sito web con l'offerta 
-                  per avviare il processo che ti farà comprare quel veicolo ad un prezzo ribassato.
+                  Una volta scelta la vettura che ti interessa, basterà inserire il link al sito web con l'offerta perché l'AI si attivi per aiutarti a negoziarne l'acquisto.
                 </p>
               </div>
             </div>
@@ -44,7 +42,7 @@ export const SolutionSection = () => {
                   </li>
                   <li className="flex items-center">
                     <div className="mr-3">✓</div>
-                    <span>Acquista come se avessi l'esperienza di un esperto</span>
+                    <span>Sentiti sicuro con l'esperienza di un professionista</span>
                   </li>
                 </ul>
               </div>

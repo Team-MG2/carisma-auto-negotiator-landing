@@ -26,7 +26,7 @@ export const Hero = ({ onPricingClick }: HeroProps) => {
             L'AI che ti aiuta a negoziare l'acquisto dell'auto
           </p>
           <p className="text-lg md:text-xl mb-12 opacity-90">
-            Riduci il prezzo della tua prossima auto di seconda mano in tranquillità, senza bisogno di esperienza
+            Riduci il prezzo della tua prossima auto di seconda mano in tranquillità, senza bisogno di esperienza negoziale
           </p>
           <Button 
             onClick={onPricingClick} 

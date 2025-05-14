@@ -9,7 +9,7 @@ interface HeroProps {
 export const Hero = ({ onPricingClick }: HeroProps) => {
   return (
     <div className="relative bg-gradient-to-br from-purple-900 to-purple-800 text-white overflow-hidden">
-      {/* Overlay with car negotiation background image */}
+      {/* Overlay with car and keys background image */}
       <div 
         className="absolute inset-0 opacity-20 bg-cover bg-center"
         style={{ 

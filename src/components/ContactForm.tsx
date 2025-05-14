@@ -27,7 +27,7 @@ export const ContactForm = () => {
       // Save form data to Supabase
       const { error } = await supabase
         .from('carisma_contattaci')
-        .insert([{ nome: name, email, messaggio: message }]);
+        .insert([{ nome: name, mail: email, messaggio: message }]);
       
       if (error) throw error;
       
